@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
+import LargeCard from "../components/LargeCard";
 import MediumCard from "../components/MediumCard";
 import SmallCard from "../components/SmallCard";
 
@@ -20,6 +21,7 @@ export default function Home({ exploreData, cardData }) {
           <h2 className="text-4xl font-semibold pb-5">Explore Nearby</h2>
 
           {/* Pull some data from a server - API endpoints */}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid xl:grid-cols-4">
             {exploreData?.map(({ img, distance, location }) => (
               <SmallCard
@@ -31,6 +33,7 @@ export default function Home({ exploreData, cardData }) {
             ))}
           </div>
         </section>
+
         <section>
           <h2 className="text-4xl font-semibold py-8 ">Live Anywhere</h2>
           <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
@@ -39,6 +42,13 @@ export default function Home({ exploreData, cardData }) {
             ))}
           </div>
         </section>
+
+        <LargeCard
+          img="https://links.papareact.com/4cj"
+          title="The Greatest Outdoors"
+          description="Wishlists curate by Airbnb"
+          buttonText="Get Inspired"
+        />
       </main>
     </div>
   );
